@@ -41,4 +41,19 @@ public class TelegramBot extends AbilityBot {
                 .build();
     }
 
+    public Reply replyToButtons1() {
+        Consumer<Update> action = upd -> messageFactory.replyToButtons1(getChatId(upd), upd.getCallbackQuery().getData());
+        return Reply.of(action, Flag.CALLBACK_QUERY);
+    }
+
+    public Reply replyToButtons2() {
+        Consumer<Update> action = upd -> messageFactory.replyToButtons2(getChatId(upd), upd.getCallbackQuery().getData());
+        return Reply.of(action, Flag.CALLBACK_QUERY);
+    }
+
+    public Reply replyToButtons3() {
+        Consumer<Update> action = upd -> messageFactory.replyToButtons3(getChatId(upd), upd.getCallbackQuery().getData());
+        return Reply.of(action, Flag.CALLBACK_QUERY);
+    }
+
 }
